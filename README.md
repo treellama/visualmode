@@ -44,6 +44,11 @@ Mode!
 FAQ
 ---
 
+> Why don't I see the texture palette?
+
+Some HUD plugins don't display a texture palette. Try disabling any HUD
+plugin you may have enabled.
+
 > How do I switch textures?
 
 In texture mode, hold down the mic key and press prev or next weapon
