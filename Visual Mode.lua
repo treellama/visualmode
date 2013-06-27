@@ -1653,6 +1653,7 @@ function Triggers.idle()
    for p in Players() do
 
       p.life = 450
+      p.oxygen = 10800
       -- Make sure overhead state exists
       if p.action_flags.toggle_map then
 	 p._overhead = not p._overhead 
