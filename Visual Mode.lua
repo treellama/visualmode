@@ -25,6 +25,8 @@ default_snap = 0
 
 -- don't modify below this line!
 
+Game.monsters_replenish = not suppress_monsters
+
 CollectionsUsed = {}
 for _, collection in pairs(walls) do
    table.insert(CollectionsUsed, collection)
@@ -1681,16 +1683,6 @@ function Triggers.idle()
 
    end --end for p in Players()
 
-   if suppress_monsters then
-      for m in Monsters() do
-	 if not m.player then
-	    -- hacks!
-	    m.active = false
-	    m.vitality = -1
-	    m.visible = false
-	 end
-      end
-   end
 end
 
 function Triggers.postidle()
