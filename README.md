@@ -1,14 +1,16 @@
 Visual Mode Plugin
+==================
 by Jon Irons and Gregory Smith
 
+
 What is this?
-=============
+-------------
 
 The Visual Mode plugin lets you texture levels in the engine, much like
 Forge's visual mode did.
 
 How do I use it?
-================
+----------------
 
 In Aleph One, go to your Environment preferences, and enable the
 Visual Mode plugin. Now, choose the map you want to texture. Start the
@@ -40,22 +42,22 @@ Congratulations, you now know *everything you need* to know about Visual
 Mode!
 
 FAQ
-===
+---
 
-Q: How do I switch textures?
-A: In texture mode, hold down the mic key and press prev or next weapon
+> How do I switch textures?
+In texture mode, hold down the mic key and press prev or next weapon
 
-Q: Does it work in co-op?
-A: Yes! Unzip the plugin, and select the Visual Mode.lua file inside
+> Does it work in co-op?
+Yes! Unzip the plugin, and select the Visual Mode.lua file inside
 as your netscript. Since Visual Mode uses the mic key, you'll have to
 resort to text chat.
 
-Q: How do I apply transparent textures?  
-A: In texture mode, switch to the overhead map. Press the secondary
+> How do I apply transparent textures?  
+In texture mode, switch to the overhead map. Press the secondary
 trigger to change between solid and transparent apply
 
-Q: How do I create rechargers, terminals, pattern buffers, and switches?
-A: Apply one of the first 5 textures. Visual mode will enter a device
+> How do I create rechargers, terminals, pattern buffers, and switches?
+Apply one of the first 5 textures. Visual mode will enter a device
 mode, where you can choose which control panel you want (only control
 panels that are appropriate for the texture you selected will be
 shown). Then press the primary trigger to save, or secondary to cancel
