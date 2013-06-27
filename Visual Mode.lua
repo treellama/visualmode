@@ -33,7 +33,7 @@ for _, collection in pairs(landscapes) do
    table.insert(CollectionsUsed, collection)
 end
 
-transfer_modes = { TransferModes["normal"], TransferModes["pulsate"], TransferModes["wobble"], TransferModes["fast wobble"], TransferModes["landscape"], TransferModes["horizontal slide"], TransferModes["fast horizontal slide"], TransferModes["vertical slide"], TransferModes["fast vertical slide"], TransferModes["wander"], TransferModes["fast wander"] }
+transfer_modes = { TransferModes["normal"], TransferModes["pulsate"], TransferModes["wobble"], TransferModes["fast wobble"], TransferModes["landscape"], TransferModes["horizontal slide"], TransferModes["fast horizontal slide"], TransferModes["vertical slide"], TransferModes["fast vertical slide"], TransferModes["wander"], TransferModes["fast wander"], TransferModes["static"] }
 
 -- short names for transfer modes
 TransferModes["normal"]._short = "normal"
@@ -47,6 +47,7 @@ TransferModes["vertical slide"]._short = "v slide"
 TransferModes["fast vertical slide"]._short = "fv slide"
 TransferModes["wander"]._short = "wander"
 TransferModes["fast wander"]._short = "f wander"
+TransferModes["static"]._short = "static"
 
 VERBOSE = true
 TICKS_BETWEEN_INCREMENT = 1
