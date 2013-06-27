@@ -1,0 +1,1 @@
+<plugin name="Visual Mode" version="3.0" description="Texture maps from within Aleph One" solo_lua="Visual Mode.lua"/>
