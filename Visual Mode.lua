@@ -1568,34 +1568,36 @@ function Triggers.init()
 
    device_collections = {}
    for t in ControlPanelTypes() do
-      if not device_collections[t.collection] then
-	 device_collections[t.collection] = {}
-      end
-      device_collections[t.collection][t.active_texture_index] = true
-      device_collections[t.collection][t.inactive_texture_index] = true
+      if t.collection then
+	 if not device_collections[t.collection] then
+	    device_collections[t.collection] = {}
+	 end
+	 device_collections[t.collection][t.active_texture_index] = true
+	 device_collections[t.collection][t.inactive_texture_index] = true
 
-      if t.class == "oxygen recharger" then
-	 t._short = "O2 charger"
-      elseif t.class == "single shield recharger" then
-	 t._short = "1x charger"
-      elseif t.class == "double shield recharger" then
-	 t._short = "2x charger"
-      elseif t.class == "triple shield recharger" then
-	 t._short = "3x charger"
-      elseif t.class == "platform switch" then
-	 t._short = "platform"
-      elseif t.class == "light switch" then
-	 t._short = "light"
-      elseif t.class == "tag switch" and t._type == "chip insertion" then
-	 t._short = "chip"
-      elseif t.class == "tag switch" and t._type == "wires" then
-	 t._short = "wires"
-      elseif t.class == "tag switch" then
-	 t._short = "tag"
-      elseif t.class == "pattern buffer" then
-	 t._short = "pat buffer"
-      else 
-	 t._short = t.class.mnemonic
+	 if t.class == "oxygen recharger" then
+	    t._short = "O2 charger"
+	 elseif t.class == "single shield recharger" then
+	    t._short = "1x charger"
+	 elseif t.class == "double shield recharger" then
+	    t._short = "2x charger"
+	 elseif t.class == "triple shield recharger" then
+	    t._short = "3x charger"
+	 elseif t.class == "platform switch" then
+	    t._short = "platform"
+	 elseif t.class == "light switch" then
+	    t._short = "light"
+	 elseif t.class == "tag switch" and t._type == "chip insertion" then
+	    t._short = "chip"
+	 elseif t.class == "tag switch" and t._type == "wires" then
+	    t._short = "wires"
+	 elseif t.class == "tag switch" then
+	    t._short = "tag"
+	 elseif t.class == "pattern buffer" then
+	    t._short = "pat buffer"
+	 else 
+	    t._short = t.class.mnemonic
+	 end
       end
    end
 
@@ -1605,14 +1607,26 @@ function Triggers.init()
    end
    table.sort(sorted_platforms, function(a, b) return a.polygon.index < b.polygon.index end)
 
+   -- remove missing collections
+   local valid_walls = {}
+   for _, collection_index in pairs(walls) do
+      if Collections[collection_index] then
+	 table.insert(valid_walls, collection_index)
+      end
+   end
+   walls = valid_walls
+
    -- build the landscape palette
    landscape_palette = {}
    for _, collection_index in pairs(landscapes) do
-      for texture_index = 0, Collections[collection_index].bitmap_count - 1 do
-	 local landscape_entry = {}
-	 landscape_entry.texture_index = texture_index
-	 landscape_entry.collection = Collections[collection_index]
-	 table.insert(landscape_palette, landscape_entry)
+      local c = Collections[collection_index]
+      if c then
+	 for texture_index = 0, c.bitmap_count - 1 do
+	    local landscape_entry = {}
+	    landscape_entry.texture_index = texture_index
+	    landscape_entry.collection = c
+	    table.insert(landscape_palette, landscape_entry)
+	 end
       end
    end
    table.insert(walls, 0)
