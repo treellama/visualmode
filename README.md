@@ -1,6 +1,6 @@
 Visual Mode Plugin
 ==================
-by Jon Irons and Gregory Smith
+*by Jon Irons and Gregory Smith*
 
 
 What is this?
@@ -38,25 +38,29 @@ Since Aleph One is a little sloppy about clearing out the data in
 levels it exports, I recommend opening and resaving in Weland when
 finished texturing.
 
-Congratulations, you now know *everything you need* to know about Visual
+Congratulations, you now know **everything you need** to know about Visual
 Mode!
 
 FAQ
 ---
 
 > How do I switch textures?
+
 In texture mode, hold down the mic key and press prev or next weapon
 
 > Does it work in co-op?
+
 Yes! Unzip the plugin, and select the Visual Mode.lua file inside
 as your netscript. Since Visual Mode uses the mic key, you'll have to
 resort to text chat.
 
 > How do I apply transparent textures?  
+
 In texture mode, switch to the overhead map. Press the secondary
 trigger to change between solid and transparent apply
 
 > How do I create rechargers, terminals, pattern buffers, and switches?
+
 Apply one of the first 5 textures. Visual mode will enter a device
 mode, where you can choose which control panel you want (only control
 panels that are appropriate for the texture you selected will be
