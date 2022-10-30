@@ -1568,6 +1568,8 @@ function Triggers.init()
    ControlPanelTypes[31]._type = "wires"
    ControlPanelTypes[41]._type = "chip insertion"
    ControlPanelTypes[42]._type = "wires"
+   ControlPanelTypes[52]._type = "chip insertion"
+   ControlPanelTypes[53]._type = "wires"
 
    device_collections = {}
    for t in ControlPanelTypes() do
