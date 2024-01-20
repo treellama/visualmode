@@ -1410,7 +1410,7 @@ function Modes.device.handle(p)
 	 if p.action_flags.cycle_weapons_forward  then
 	    p.action_flags.cycle_weapons_forward = false
 	    if is_switch(p._device.device) then
-	       p._device.weapons_only = not p._device.weapons_only
+	       p._device.only_toggled_by_weapons = not p._device.only_toggled_by_weapons
 	    end
 	 end
 
@@ -1466,7 +1466,7 @@ function Modes.device.handle(p)
 
 	 if is_switch(p._device.device) then
 	    p.overlays[3].text = "wep only"
-	    if not p._device.weapons_only then
+	    if not p._device.only_toggled_by_weapons then
 	       p.overlays[3].color = "dark red"
 	    end
 	 else
