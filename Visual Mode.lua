@@ -35,7 +35,7 @@ for _, collection in pairs(landscapes) do
    table.insert(CollectionsUsed, collection)
 end
 
-transfer_modes = { TransferModes["normal"], TransferModes["pulsate"], TransferModes["wobble"], TransferModes["fast wobble"], TransferModes["landscape"], TransferModes["horizontal slide"], TransferModes["fast horizontal slide"], TransferModes["vertical slide"], TransferModes["fast vertical slide"], TransferModes["wander"], TransferModes["fast wander"], TransferModes["static"] }
+transfer_modes = { TransferModes["normal"], TransferModes["pulsate"], TransferModes["wobble"], TransferModes["fast wobble"], TransferModes["landscape"], TransferModes["horizontal slide"], TransferModes["fast horizontal slide"], TransferModes["vertical slide"], TransferModes["fast vertical slide"], TransferModes["wander"], TransferModes["fast wander"], TransferModes["static"], TransferModes["reverse horizontal slide"], TransferModes["reverse fast horizontal slide"], TransferModes["reverse vertical slide"], TransferModes["reverse fast vertical slide"], TransferModes["2x"], TransferModes["4x"] }
 
 -- short names for transfer modes
 TransferModes["normal"]._short = "normal"
@@ -50,6 +50,12 @@ TransferModes["fast vertical slide"]._short = "fv slide"
 TransferModes["wander"]._short = "wander"
 TransferModes["fast wander"]._short = "f wander"
 TransferModes["static"]._short = "static"
+TransferModes["reverse horizontal slide"]._short = "h sl r"
+TransferModes["reverse fast horizontal slide"]._short = "fh sl r"
+TransferModes["reverse vertical slide"]._short = "v sl r"
+TransferModes["reverse fast vertical slide"]._short = "fv sl r"
+TransferModes["2x"]._short = "2x"
+TransferModes["4x"]._short = "4x"
 
 VERBOSE = true
 TICKS_BETWEEN_INCREMENT = 1
