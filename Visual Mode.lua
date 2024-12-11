@@ -255,6 +255,13 @@ function get_counterclockwise_side_endpoint(side)
    end
 end
 
+function new_side(polygon, line)
+   local side = Sides.new(polygon, line)
+   table.insert(cw_endpoint_sides[get_clockwise_side_endpoint(side)], side)
+   table.insert(ccw_endpoint_sides[get_counterclockwise_side_endpoint(side)], side)
+   return side
+end
+
 -- returns primary_side, secondary_side, or transparent_side
 function side_surface(side, z)
    if side.type == "full" then
@@ -875,7 +882,7 @@ function Modes.texture.handle(p)
 		  surface = o.floor
 	       elseif is_line(o) then
 		  -- we need to make a new side
-		  surface = side_surface(Sides.new(polygon, o), z)
+		  surface = side_surface(new_side(polygon, o), z)
 	       end
 	       
 	       if surface then
@@ -908,13 +915,13 @@ function Modes.texture.handle(p)
 			   if line.counterclockwise_side then
 			      dragging.opposite_surface = line.counterclockwise_side.transparent
 			   elseif line.counterclockwise_polygon then
-			      dragging.opposite_surface = Sides.new(line.counterclockwise_polygon, line).transparent
+			      dragging.opposite_surface = new_side(line.counterclockwise_polygon, line).transparent
 			   end
 			else
 			   if line.clockwise_side then
 			      dragging.opposite_surface = line.clockwise_side.transparent
 			   elseif line.clockwise_polygon then
-			      dragging.opposite_surface = Sides.new(line.clockwise_polygon, line).transparent
+			      dragging.opposite_surface = new_side(line.clockwise_polygon, line).transparent
 			   end
 			end
 
